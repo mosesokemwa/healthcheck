@@ -30,7 +30,6 @@
             {% if ch.kind == "email" %} Email {% endif %}
             {% if ch.kind == "webhook" %} Webhook {% endif %}
             {% if ch.kind == "slack" %} Slack {% endif %}
-            {% if ch.kind == "hipchat" %} HipChat {% endif %}
             {% if ch.kind == "pd" %} PagerDuty {% endif %}
             {% if ch.kind == "po" %} Pushover {% endif %}
             {% if ch.kind == "victorops" %} VictorOps {% endif %}
@@ -161,15 +160,7 @@
 
             <a href="{% url 'hc-add-pd' %}" class="btn btn-primary">Add Integration</a>
         </li>
-        <li>
-            <img src="{% static 'img/integrations/hipchat.png' %}"
-                class="icon" alt="HipChat icon" />
 
-            <h2>HipChat</h2>
-            <p>Group and private chat, file sharing, and integrations.</p>
-
-            <a href="{% url 'hc-add-hipchat' %}" class="btn btn-primary">Add Integration</a>
-        </li>
         <li>
             <img src="{% static 'img/integrations/victorops.png' %}"
                 class="icon" alt="VictorOps icon" />

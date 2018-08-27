@@ -130,17 +130,6 @@ class Slack(HttpTransport):
         payload = json.loads(text)
         return self.post(self.channel.slack_webhook_url, payload)
 
-
-class HipChat(HttpTransport):
-    def notify(self, check):
-        text = tmpl("hipchat_message.html", check=check)
-        payload = {
-            "message": text,
-            "color": "green" if check.status == "up" else "red",
-        }
-        return self.post(self.channel.value, payload)
-
-
 class PagerDuty(HttpTransport):
     URL = "https://events.pagerduty.com/generic/2010-04-15/create_event.json"
 

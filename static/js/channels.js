@@ -3,7 +3,6 @@ $(function() {
         email: "address@example.org",
         webhook: "http://",
         slack: "https://hooks.slack.com/...",
-        hipchat: "https://api.hipchat.com/...",
         pd: "service key"
     }
 

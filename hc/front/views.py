@@ -427,13 +427,6 @@ def add_slack_btn(request):
 
     return redirect("hc-channels")
 
-
-@login_required
-def add_hipchat(request):
-    ctx = {"page": "channels"}
-    return render(request, "integrations/add_hipchat.html", ctx)
-
-
 @login_required
 def add_pushbullet(request):
     if settings.PUSHBULLET_CLIENT_ID is None:

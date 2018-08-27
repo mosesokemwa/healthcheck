@@ -186,19 +186,6 @@ class NotifyTestCase(BaseTestCase):
         self.assertEqual(n.error, "Connection timed out")
 
     @patch("hc.api.transports.requests.request")
-    def test_hipchat(self, mock_post):
-        self._setup_data("hipchat", "123")
-        mock_post.return_value.status_code = 204
-
-        self.channel.notify(self.check)
-        n = Notification.objects.first()
-        self.assertEqual(n.error, "")
-
-        args, kwargs = mock_post.call_args
-        json = kwargs["json"]
-        self.assertIn("DOWN", json["message"])
-
-    @patch("hc.api.transports.requests.request")
     def test_pushover(self, mock_post):
         self._setup_data("po", "123|0")
         mock_post.return_value.status_code = 200
