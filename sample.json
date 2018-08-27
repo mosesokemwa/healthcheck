@@ -1,0 +1,28 @@
+{
+   "checks":[
+      {
+         "status":"new",
+         "last_ping": "2018-08-27T21:55:28+00:00",
+         "name":"Alice 1",
+         "tags":"",
+         "pause_url":"http://localhost:8000/api/v1/checks/11b113c5-438c-4185-a79a-10a70799e1b9/pause",
+         "next_ping":"2018-08-27T22:55:28+00:00",
+         "ping_url":"http://localhost:8000/ping/11b113c5-438c-4185-a79a-10a70799e1b9",
+         "timeout":3600,
+         "n_pings":1,
+         "grace":900
+      },
+      {
+         "status":"up",
+         "last_ping":"2018-08-27T21:55:28+00:00",
+         "name":"Alice 2",
+         "tags":"",
+         "pause_url":"http://localhost:8000/api/v1/checks/d3b1ae15-19c1-47b4-82ab-c3f86a8177ad/pause",
+         "next_ping":"2018-08-28T21:55:28+00:00",
+         "ping_url":"http://localhost:8000/ping/d3b1ae15-19c1-47b4-82ab-c3f86a8177ad",
+         "timeout":86400,
+         "n_pings":0,
+         "grace":3600
+      }
+   ]
+}
