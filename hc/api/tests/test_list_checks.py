@@ -37,7 +37,6 @@ class ListChecksTestCase(BaseTestCase):
         self.assertEqual(r.status_code, 200)
 
         doc = r.json()
-        print(doc)
         self.assertTrue("checks" in doc)
 
         checks = {check["name"]: check for check in doc["checks"]}
@@ -69,8 +68,12 @@ class ListChecksTestCase(BaseTestCase):
         self.assertEqual(checks["Alice 1"]["next_ping"], alice_1_ping.isoformat())
         self.assertEqual(checks["Alice 2"]["next_ping"], alice_2_ping.isoformat())
 
+
+        ### best guess work of my life, never thougt it would work
         pause_url = "http://localhost:8000/api/v1/checks/%s" % self.a1.code + "/pause"
         self.assertEqual(checks["Alice 1"]["pause_url"], pause_url)
+
+        pause_url = "http://localhost:8000/api/v1/checks/%s" % self.a2.code + "/pause"
         self.assertEqual(checks["Alice 2"]["pause_url"], pause_url)
 
 
@@ -85,3 +88,9 @@ class ListChecksTestCase(BaseTestCase):
             self.assertNotEqual(check["name"], "Bob 1")
 
     ### Test that it accepts an api_key in the request
+    ## NOTE_TO_SELF figure out how generic json types work
+    def test_it_accepts_api_key_in_request(self):
+        payload = json.dumps({"api_key": "abc"})
+        r = self.client.generic("GET", "/api/v1/checks/", payload,content_type="application/json")
+
+        self.assertEqual(r.status_code, 200)
