@@ -23,5 +23,5 @@ pbr==4.2.0
 premailer==2.9.6
 psycopg2==2.7.3.1
 rcssmin==1.0.6
-rjsmin==1.0.12
+rjsmin==1.1.0
 six==1.11.0
