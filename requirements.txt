@@ -19,7 +19,7 @@ funcsigs==1.0.2
 futures==3.0.3
 lxml==4.2.4
 mock==2.0.0
-pbr==4.2.0
+pbr==5.5.1
 premailer==2.9.6
 psycopg2==2.7.3.1
 rcssmin==1.0.6
